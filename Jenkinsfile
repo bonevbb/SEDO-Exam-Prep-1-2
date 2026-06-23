@@ -12,19 +12,19 @@ pipeline {
             stages {
                 stage('Restore') {
                     steps {
-                        sh 'dotnet restore'
+                        sh '/usr/local/bin/dotnet restore'
                     }
                 }
 
                 stage('Build') {
                     steps {
-                        sh 'dotnet build --no-restore'
+                        sh '/usr/local/bin/dotnet build --no-restore'
                     }
                 }
 
                 stage('Test') {
                     steps {
-                        sh 'dotnet test --no-build --verbosity normal'
+                        sh '/usr/local/bin/dotnet test --no-build --verbosity normal'
                     }
                 }
             }
